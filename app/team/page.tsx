@@ -2,52 +2,68 @@
 
 import { motion } from "framer-motion";
 import { AnimatedDotPattern } from "@/components/dot-matrix-logo";
-import { Users, Award, TrendingUp, Globe2 } from "lucide-react";
+import { Users, Award, TrendingUp, Globe2, BarChart3, Shield, Code2, Briefcase, Brain, Scale } from "lucide-react";
 import Link from "next/link";
 
-const leadership = [
+const capabilities = [
   {
-    initials: "JH",
-    name: "Jason Hutchinson",
-    role: "Chief Investment Analyst & Portfolio Manager",
-    bio: "Leads investment strategy and risk at Mira Labs, bringing eight years of experience managing $300M discretionary portfolios with a focus on quantitative strategies and digital asset risk controls.",
+    icon: BarChart3,
+    title: "Quantitative Research",
+    description: "Systematic alpha generation through statistical modeling, factor analysis, and machine learning. Our quant team builds and maintains proprietary signals across digital and traditional asset classes.",
     highlights: [
-      "Portfolio Manager, Sector Analysts (RIA, $300M AUM)",
-      "Former Series 7/65 (reinstatement in progress), CAIA Charterholder",
-      "Project finance leader across $100M–$5B transactions with Swiss fund partnerships",
+      "Multi-factor models and alternative data pipelines",
+      "Real-time risk analytics and portfolio optimization",
+      "Backtesting infrastructure with institutional-grade execution logic",
     ],
   },
   {
-    initials: "SD",
-    name: "Sean Demosthenous",
-    role: "Chief Business Development Officer",
-    bio: "Drives institutional relationships and capital formation after 15 years in global credit derivatives, structured products, and cross-border trade finance.",
+    icon: Code2,
+    title: "Engineering & Infrastructure",
+    description: "Full-stack platform engineering from low-latency execution systems to scalable cloud infrastructure. Purpose-built for institutional throughput and regulatory auditability.",
     highlights: [
-      "Top-decile CDS broker at Tullett Prebon (TP ICAP) and BGC Partners",
-      "Partner, Emira Trade Desk; former Lloyd's of London broker",
-      "Built a network of 200+ family offices and HNWI allocators; scaled Zeebu's institutional reach",
+      "High-availability trading systems and API integrations",
+      "Secure custody and wallet infrastructure",
+      "Continuous deployment with SOC 2-aligned DevSecOps",
     ],
   },
   {
-    initials: "AA",
-    name: "Amik Ahmad",
-    role: "Chief Product Officer",
-    bio: "Leads product and platform innovation, combining AI, Web3, and institutional UX expertise from Amazon, One Medical, Autonomys Labs, and multiple blockchain ventures.",
+    icon: Shield,
+    title: "Compliance & Regulatory",
+    description: "Multi-jurisdictional compliance spanning SEC, FINRA, CSSF, and Swiss regulatory frameworks. Proactive governance embedded into every product decision.",
     highlights: [
-      "Co-founded Amazon Blockchain Group; Red Dot Design Award recipient",
-      "Launched L1 protocol (FDV $415M) and MPC wallet partnerships at Kresus Labs",
-      "Director of Product at One Medical, helping guide the company toward profitability pre-IPO",
+      "KYC/AML automation and transaction monitoring",
+      "Cross-border regulatory alignment (US, EU, Switzerland)",
+      "Ongoing audit preparation and reporting standards",
     ],
   },
   {
-    initials: "ZR",
-    name: "Zuhayr Reaz",
-    role: "Chief Growth Officer",
-    bio: "Responsible for strategic partnerships, ecosystem growth, and tokenomics; scaled Zeebu's TVL 3.6x and deployed capital across 200+ crypto projects.",
+    icon: Briefcase,
+    title: "Capital Markets & Distribution",
+    description: "Deep institutional relationships across family offices, fund-of-funds, and sovereign allocators. Experienced in structuring and distributing regulated investment products.",
     highlights: [
-      "Johnson Cornell MBA (Finance & Strategy); Duke University MEng (Financial Technology)",
-      "Led partnership ecosystems at a $36B exchange; growth consultant for high-performing crypto projects",
-      "Grew Zeebu TVL from $26M to $94M within 12 months",
+      "Institutional onboarding and relationship management",
+      "Structured product design and capital formation",
+      "Allocator reporting and performance attribution",
+    ],
+  },
+  {
+    icon: Brain,
+    title: "AI & Data Science",
+    description: "Applied machine learning for market microstructure analysis, sentiment extraction, and portfolio intelligence. Bridging traditional finance and cutting-edge AI research.",
+    highlights: [
+      "NLP-driven market sentiment and news analytics",
+      "Predictive models for volatility and liquidity",
+      "Automated research pipelines and RAG systems",
+    ],
+  },
+  {
+    icon: Scale,
+    title: "Risk Management",
+    description: "Enterprise risk framework covering market, credit, operational, and cyber risk. Real-time monitoring with institutional escalation protocols.",
+    highlights: [
+      "VaR, CVaR, and stress testing across portfolios",
+      "Counterparty and custodian due diligence",
+      "Operational risk controls and disaster recovery",
     ],
   },
 ];
@@ -72,10 +88,10 @@ const advisors = [
 ];
 
 const trackRecord = [
-  { label: "CDS Contracts Brokered", value: "$10B+", icon: TrendingUp },
-  { label: "Assets Under Management", value: "$300M", icon: Award },
-  { label: "TVL Growth Delivered", value: "3.6x", icon: Globe2 },
-  { label: "Collective Experience", value: "15+ years", icon: Users },
+  { label: "Combined AUM Experience", value: "$300M+", icon: TrendingUp },
+  { label: "Jurisdictions Covered", value: "12+", icon: Globe2 },
+  { label: "Team Members", value: "20+", icon: Users },
+  { label: "Uptime SLA", value: "99.9%", icon: Award },
 ];
 
 export default function TeamPage() {
@@ -93,12 +109,12 @@ export default function TeamPage() {
             className="mx-auto max-w-3xl text-center"
           >
             <h1 className="text-4xl font-light tracking-tight text-gray-900 sm:text-5xl">
-              Leadership Team
+              Our Team
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-gray-600">
-              Institutional pedigree across markets, product, and growth. Mira Labs combines portfolio
-              management, capital markets, and technology expertise to deliver a regulated digital asset platform
-              with day-one scale.
+              A multidisciplinary team of quantitative researchers, engineers, compliance specialists, and
+              capital markets professionals. Mira Labs brings together institutional expertise across finance,
+              technology, and regulation to build and operate a best-in-class digital asset platform.
             </p>
           </motion.div>
 
@@ -123,42 +139,37 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Leadership Section */}
+      {/* Capabilities Section */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <h2 className="text-3xl font-light tracking-tight text-gray-900">Core Leadership</h2>
+            <h2 className="text-3xl font-light tracking-tight text-gray-900">Core Capabilities</h2>
             <p className="mt-4 text-lg text-gray-600">
-              Team overseeing investment strategy, regulatory operations, product development, and growth.
+              Specialized teams across every discipline required to build, operate, and scale an institutional-grade platform.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
-            {leadership.map((member, index) => (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {capabilities.map((cap, index) => (
               <motion.article
-                key={member.name}
+                key={cap.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm"
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-xl font-light text-gray-900">
-                    {member.initials}
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gray-100">
+                    <cap.icon className="h-6 w-6 text-gray-900" strokeWidth={1.5} />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-wide text-gray-500">
-                      {member.role}
-                    </p>
-                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">{cap.title}</h3>
                 </div>
 
-                <p className="mt-6 text-sm leading-relaxed text-gray-600">{member.bio}</p>
+                <p className="mt-5 text-sm leading-relaxed text-gray-600">{cap.description}</p>
 
-                <ul className="mt-6 space-y-3">
-                  {member.highlights.map((highlight) => (
+                <ul className="mt-5 space-y-3">
+                  {cap.highlights.map((highlight) => (
                     <li key={highlight} className="flex items-start gap-3 text-sm text-gray-600">
                       <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-400" />
                       <span>{highlight}</span>
@@ -204,10 +215,10 @@ export default function TeamPage() {
       <section className="bg-gray-900 py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <h2 className="text-3xl font-light tracking-tight text-white sm:text-4xl">
-            Connect with the Leadership Team
+            Connect with Our Team
           </h2>
           <p className="mt-4 text-lg text-gray-300">
-            Schedule a confidential briefing to review platform operations, track records, and partnership
+            Schedule a confidential briefing to review platform capabilities, infrastructure, and partnership
             opportunities.
           </p>
 
